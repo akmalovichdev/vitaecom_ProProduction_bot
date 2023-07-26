@@ -9,7 +9,9 @@ async def sendinvoice(userId, plus):
     elif plus == '2':
         plus1 = 'Тариф 2'
         price = 1990000
-
+    elif plus == '3':
+        plus1 = 'Бронь места'
+        price = 300000
 
     title = 'Покупка'
     desc = f'Вы покупаете подписку: "{plus1}"'

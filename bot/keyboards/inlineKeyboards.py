@@ -14,6 +14,7 @@ def tariffs(call):
     main = InlineKeyboardMarkup()
     buy1 = InlineKeyboardButton("Приобрести Тариф 1", callback_data="buy-1")
     buy2 = InlineKeyboardButton("Приобрести Тариф 2", callback_data="buy-2")
+    buy2 = InlineKeyboardButton("Бронь места 3000р", callback_data="buy-3")
     help = InlineKeyboardButton("Связаться с поддержкой", url='https://t.me/vitaecom_support')
     main.add(buy1)
     main.add(buy2)
