@@ -1,6 +1,7 @@
 from aiogram import types
 from bot import dp, bot
 from data.config import yoomoneyToken
+from data import text
 
 async def sendinvoice(userId, plus):
     if plus == '1':
@@ -36,4 +37,6 @@ async def sendinvoice(userId, plus):
 @dp.callback_query_handler(lambda c: c.data.startswith('buy'))
 async def buy(call: types.CallbackQuery):
     id = call.data.split('-')[1]
+    if id == '3':
+        await bot.send_message(call.from_user.id, f'{text.tariff3(call)}')
     await sendinvoice(call.from_user.id, id)

@@ -25,7 +25,12 @@ async def process_shipping_query(shipping_query: types.ShippingQuery):
 async def process_successful_payment(message: types.Message):
     plus = message.successful_payment.invoice_payload.split('-')[1]
     adminId = os.getenv('adminId')
-    await bot.send_message(message.from_user.id, f'''
+    if plus == '3':
+        await bot.send_message(message.from_user.id, f'''
+Благодарим за оплату. Скоро мы с вами свяжемся и вышлем ссылку на доплату ☺️
+''')
+    else:
+        await bot.send_message(message.from_user.id, f'''
 Спасибо за оплату и доверие! 
 Внизу ссылка на канал, где будет вся организационная информация об экспресс-курсе. 
 До встречи !)
