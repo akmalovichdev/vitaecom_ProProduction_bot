@@ -1,0 +1,7 @@
+python-dotenv
+mysql-connector-python
+aiogram==2.25.1
+requests
+asyncio
+schedule
+openai
